@@ -1,0 +1,15 @@
+[Unit]
+Description=File Tracker Service for %i
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i/file_track
+ExecStart=/usr/bin/python3 /home/%i/file_track/file_tracker.py --watch /home/%i/rm_description
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
