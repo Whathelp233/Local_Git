@@ -1,7 +1,7 @@
 #!/bin/bash
 # 自动清理 file_tracker 日志和 Git 历史
-WATCH_DIR="/home/what/rm_description"
-LOG_FILE="/home/what/file_tracker.log"
+WATCH_DIR="Enter you work_space"
+LOG_FILE="Enther you log_space"
 MAX_SIZE=$((50*1024*1024))  # 50MB
 
 # 清理日志
