@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# File Tracker - Automatic Git commit on file changes
+# Author: WhatHelp233
+# Version: v2.0
+# Purpose: Monitor file changes in workspace and auto-commit to local Git repository
 
 import os
 import sys
@@ -12,11 +16,11 @@ try:
     from watchdog.observers import Observer
     from watchdog.events import FileSystemEventHandler
 except ImportError:
-    print("请先安装 watchdog: python3 -m pip install --user watchdog")
+    print("Please install watchdog first: python3 -m pip install --user watchdog")
     sys.exit(1)
 
-DELAY_SECONDS = 0  # 0表示立即 commit
-LOG_FILE = os.path.expanduser("~/file_tracker.log")  # 用户目录日志
+DELAY_SECONDS = 0  # 0 means immediate commit
+LOG_FILE = os.path.expanduser("~/file_tracker.log")  # Log file in user home directory
 
 class FileTrackerHandler(FileSystemEventHandler):
     def __init__(self, changed_files, watch_path):
